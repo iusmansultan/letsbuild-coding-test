@@ -5,15 +5,15 @@ import { INPUT_FILE, OUTPUT_FILE } from './constant';
 
 const app = express();
 
-fs.readFile(INPUT_FILE, 'utf8', (err: any, data: any) => {
-  if (err) {
-    console.error('Error reading the file:', err);
-    return;
-  }
+const tasks = fs.readFileSync(INPUT_FILE, 'utf8')
+  .toString()
+  .trimEnd()
+  .split("\n");
 
-  const results = FindCubes(data);
-  console.log(results.join("\n"));
-  fs.writeFileSync(OUTPUT_FILE, results.join("\n"));
-});
+const results = FindCubes(tasks)
+console.log(results.join("\n"));
+fs.writeFileSync(OUTPUT_FILE, results.join("\n"));
+
+process.exit(0);
 
 export default app;

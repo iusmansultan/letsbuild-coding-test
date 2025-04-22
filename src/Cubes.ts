@@ -1,28 +1,15 @@
-import { calculateBoxVolumes, calculateCubeVolumes, calculatePackedCubes, parseInput, powersOfTwo } from "./utils/helpers";
+import { calculateMinCubes, parseTask } from "./utils/helpers";
 
-const FindCubes = (input: string): number[] => {
-  const { boxArray, cubeArray } = parseInput(input);
-  const boxVolumes = calculateBoxVolumes(boxArray);
-  const cubeVolumes = calculateCubeVolumes(cubeArray);
+function FindCubes(tasks: string[]) {
+  const results: number[] = [];
+  tasks.forEach((task: string) => {
 
-  const resultArray: number[] = [];
+    const res = parseTask(task)
 
-  for (let i = 0; i < boxVolumes.length; i++) {
-    const boxVolume = boxVolumes[i];
-    const cubesVolume = cubeVolumes[i].reduce((sum, cube) => sum + cube, 0);
-
-    let result = 0;
-    if (boxVolume > cubesVolume) {
-      result = -1;
-    } else {
-      const powersArray = powersOfTwo(cubeArray[i].length);
-      result = calculatePackedCubes(boxVolume, cubeArray[i], powersArray);
-    }
-
-    resultArray.push(result);
-  }
-
-  return resultArray;
-};
+    const result = calculateMinCubes(res)
+    results.push(result)
+  })
+  return results
+}
 
 export { FindCubes };
