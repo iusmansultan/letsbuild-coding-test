@@ -91,7 +91,6 @@ function validateInput(input: string) {
     return reg.test(input)
 }
 
-
 function parseTask(task: string): calculateMinProps {
     const parse = task.split(' ')
 
@@ -109,4 +108,4 @@ function parseTask(task: string): calculateMinProps {
     return { box, cubes }
 }
 
-export { calculateMinCubes, validateInput, parseTask }
+export { calculateMinCubes, validateInput, parseTask, getQuotientAndReminder, destroyBox }
