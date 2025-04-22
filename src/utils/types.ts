@@ -1,5 +1,3 @@
-import readline from "readline";
-
 type CubesType = {
     size: number,
     amount: number
@@ -12,14 +10,9 @@ type BoxType = {
 }
 
 
-const readLineInterface = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-})
-
 interface calculateMinProps {
     box: BoxType,
     cubes: CubesType
 }
 
-export { readLineInterface, calculateMinProps }
+export { calculateMinProps }
