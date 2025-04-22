@@ -40,3 +40,10 @@ PORT=4000
  ```bash
  npm run dev
  ```
+
+
+### Run Tests
+
+ ```bash
+ npm run test
+ ```
