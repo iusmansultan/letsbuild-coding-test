@@ -70,3 +70,11 @@ PORT=4000
 50070
 9
 ```
+
+### Example Walkthrough:
+
+Given a box of size 10x10x10, and cubes of size 1, 2, 4 with respective amounts of 2, 3, 5, the function will:
+
+1. Try to fill the box starting with the largest cubes (size 4), then move to size 2, and finally fill the smallest gaps with size 1 cubes.
+2. It keeps track of how many cubes it uses and tries to avoid wasting space.
+3. Once the box is fully packed or no cubes can fit, the function returns the total number of cubes used.
