@@ -1,6 +1,6 @@
 import { calculateBoxVolumes, calculateCubeVolumes, calculatePackedCubes, parseInput, powersOfTwo } from "./utils/helpers";
 
-const findCubes = (input: string): number[] => {
+const FindCubes = (input: string): number[] => {
   const { boxArray, cubeArray } = parseInput(input);
   const boxVolumes = calculateBoxVolumes(boxArray);
   const cubeVolumes = calculateCubeVolumes(cubeArray);
@@ -25,4 +25,4 @@ const findCubes = (input: string): number[] => {
   return resultArray;
 };
 
-export { findCubes };
+export { FindCubes };
